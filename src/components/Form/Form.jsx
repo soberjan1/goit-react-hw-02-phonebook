@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { FormDiv, Input, Button } from './Form.styled';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
@@ -40,10 +41,10 @@ export default class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <FormDiv onSubmit={this.handleSubmit}>
         <label htmlFor={this.nameInputId}>
           Name
-          <input
+          <Input
             type="text"
             name="name"
             // pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -57,7 +58,7 @@ export default class Form extends Component {
 
         <label htmlFor={this.tellInputId}>
           Number
-          <input
+          <Input
             type="tel"
             name="number"
             // pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -69,8 +70,8 @@ export default class Form extends Component {
           />
         </label>
 
-        <button type="submit">Add contact</button>
-      </form>
+        <Button type="submit">Add contact</Button>
+      </FormDiv>
     );
   }
 }
